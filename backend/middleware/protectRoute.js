@@ -2,6 +2,9 @@ import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
 
 const protectRoute = async (req, res, next) => {
+  // Protectroute middleware is used to protect the routes that
+  // require authentication such as user profile, update user, delete user, etc.
+
   try {
     const token = req.cookies.jwt;
     if (!token) {
